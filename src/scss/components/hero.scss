@@ -1,0 +1,138 @@
+.hero {
+	display: flex;
+	color: var(--white-color);
+
+	&__content-body {
+		padding-top: toRem(170);
+		background-color: var(--brown-middle, #120900);
+		width: 55%;
+		@include adaptiveValue("padding-top", 170, 100);
+
+		@media (max-width: em(550)) {
+			width: 100%;
+			padding-bottom: toRem(20);
+		}
+	}
+
+	&__content-container {
+		padding-left: toRem(15);
+		max-width: toRem(710);
+		width: 100%;
+		margin-left: auto;
+
+		@media (max-width: em(550)) {
+			margin: 0;
+			padding: 0 toRem(15);
+		}
+	}
+
+	&__title {
+		position: relative;
+		color: var(--white-color, #FFF);
+		font-family: 'Playfair Display';
+		@include adaptiveValue("font-size", 64, 28);
+		line-height: 1.2;
+		margin-bottom: toRem(20);
+
+		@media (min-width:em(550)) {
+			@include adaptiveValue("width", 700, 300);
+			z-index: 1;
+		}
+	}
+
+	&__text {
+		position: relative;
+		color: var(--white-color, #FFF);
+		@include adaptiveValue("font-size", 20, 14);
+		max-width: toRem(610);
+		width: 100%;
+		@include adaptiveValue("margin-bottom", 40, 20);
+
+		@media (min-width:em(550)) {
+			@include adaptiveValue("width", 610, 310);
+			z-index: 1;
+		}
+	}
+
+	&__link {
+		@include adaptiveValue("margin-bottom", 40, 20);
+	}
+
+	&__images {
+		img {
+			@include adaptiveValue("width", 183, 120);
+		}
+	}
+
+	&__images-slide {
+		@media (max-width: em(550)) {
+			margin: 0 auto;
+		}
+	}
+
+	&__slider-body {
+		position: relative;
+		background-color: var(--dark-color, #06100F);
+		width: 45%;
+
+		@media (max-width: em(550)) {
+			display: none;
+		}
+	}
+
+	&__slider {
+		height: 100%;
+	}
+
+	&__slide {
+
+		img {
+			object-fit: cover;
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	&__slider-nav {
+		display: flex;
+		position: absolute;
+		bottom: toRem(65);
+		right: 50%;
+		gap: toRem(40);
+		transform: translateX(50%);
+		z-index: 1;
+	}
+
+	&__button-prev,
+	&__button-next {
+		width: toRem(50);
+		height: toRem(50);
+		background-color: var(--yellow-color);
+		position: relative;
+
+		&::before {
+			content: '';
+			position: absolute;
+			width: toRem(37);
+			height: toRem(15);
+			left: 50%;
+			top: 50%;
+			background-repeat: no-repeat;
+			background-size: contain;
+			transform: translate(-50%, -50%);
+		}
+	}
+
+	&__button-prev {
+		&::before {
+			background-image: url('@img/hero/arrow-left.svg');
+		}
+	}
+
+	&__button-next {
+		&::before {
+			background-image: url('@img/hero/arrow-right.svg');
+		}
+	}
+}

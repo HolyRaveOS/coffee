@@ -1,0 +1,79 @@
+.favorite-menu {
+	@include adaptiveValue("padding-top", $p-big, $p-small);
+	@include adaptiveValue("padding-bottom", calc($p-big / 2), calc($p-small / 2));
+
+	&__container {
+		@media (max-width:$mobileSmall) {
+			padding: 0 toRem(7);
+		}
+	}
+
+	&__title {
+		&._tab-active {
+			background-color: var(--brown-color);
+		}
+	}
+
+	&__tabs {
+		display: flex;
+		flex-direction: row-reverse;
+		gap: toRem(20);
+
+		@media (max-width:$pc) {
+			flex-direction: column;
+		}
+	}
+
+	&__tabs-navigation {
+		display: flex;
+		flex-direction: column;
+		max-width: toRem(285);
+		width: 100%;
+		justify-content: space-between;
+		@include adaptiveValue("gap", 10, 5);
+
+		@media (max-width:$pc) {
+			max-width: 100%;
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: space-evenly;
+		}
+	}
+
+	&__tabs-title {
+		padding: 0 3px;
+		@include adaptiveValue("padding-top", 30, 15);
+		@include adaptiveValue("padding-bottom", 30, 15);
+		@include adaptiveValue("width", 285, 150);
+		border: 1px solid var(--brown-color, #43210C);
+
+		&._tab-active {
+			background-color: var(--brown-color);
+			color: var(--white-color);
+		}
+	}
+}
+
+.tabs-body {
+	&__list {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		column-gap: toRem(20);
+		row-gap: toRem(10);
+		place-items: center;
+
+		@media (max-width:$pc) {
+			grid-template-columns: repeat(auto-fill, minmax(toRem(283), 1fr));
+		}
+
+		@media (max-width:$tablet) {
+			column-gap: toRem(10);
+		}
+	}
+
+	&__item {
+		@media (max-width:$tablet) {
+			width: 100%;
+		}
+	}
+}

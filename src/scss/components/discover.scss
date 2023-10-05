@@ -1,0 +1,46 @@
+.discover {
+	position: relative;
+	background-repeat: no-repeat;
+	background-size: cover;
+	@include adaptiveValue("padding-top", 60, 30);
+	@include adaptiveValue("padding-bottom", 195, 30);
+
+	@media (min-width:$tablet) {
+		&::before {
+			content: '';
+			background-image: url('@img/discover/1.png');
+			width: toRem(470);
+			height: toRem(640);
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+	}
+
+	&__container {
+		position: relative;
+		color: var(--white-color);
+		text-align: center;
+		z-index: 1;
+	}
+
+	&__title {
+		text-align: center;
+		font-family: 'Playfair Display';
+		@include adaptiveValue("font-size", 48, 32);
+		font-style: normal;
+		font-weight: 600;
+		line-height: 1.2;
+		@include adaptiveValue("padding-bottom", 50, 10);
+	}
+
+	&__text {
+		max-width: toRem(540);
+		width: 100%;
+		margin: 0 auto;
+		@include adaptiveValue("font-size", 20, 16);
+		@include adaptiveValue("margin-bottom", 50, 20);
+	}
+
+	&__link {}
+}

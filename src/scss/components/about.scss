@@ -1,0 +1,105 @@
+.about {
+	@include adaptiveValue("padding-top", $p-big, $p-small );
+	@include adaptiveValue("padding-bottom", $p-big, $p-small);
+
+	&__container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: toRem(20);
+		@include adaptiveValue("gap", 20, 0);
+
+		@media (max-width:$mobile) {
+			flex-wrap: wrap;
+			padding: 0;
+		}
+	}
+
+	&__info-body,
+	&__content-body {
+		@media (max-width:$mobile) {
+			padding: 0 toRem(15);
+		}
+	}
+
+	&__content-body {
+		max-width: toRem(440);
+		width: 100%;
+	}
+
+	&__text {
+		p {
+			&:not(:last-child) {
+				@include adaptiveValue("margin-bottom", 20, 10);
+			}
+		}
+
+		@include adaptiveValue("margin-bottom", 30, 15);
+	}
+
+	&__list {
+		@include adaptiveValue("margin-bottom", 30, 15);
+	}
+
+	&__item {
+		display: flex;
+		align-items: start;
+		gap: toRem(10);
+
+		&:not(:last-child) {
+			margin-bottom: toRem(10);
+		}
+
+		&::before {
+			content: '';
+			min-width: toRem(20);
+			height: toRem(20);
+			background-image: url('@img/about/check.svg');
+		}
+	}
+
+	&__info-body {
+		max-width: toRem(150);
+		width: 100%;
+
+		@media (max-width: em(650)) {
+			max-width: 100%;
+		}
+	}
+
+	&__info-list {
+		@media (max-width: em(650)) {
+			display: flex;
+			justify-content: space-around;
+			gap: toRem(20);
+			margin-bottom: toRem(10);
+		}
+	}
+
+	&__info-item {
+		text-align: center;
+	}
+
+	&__info-heading {
+		font-family: 'Playfair Display';
+		@include adaptiveValue("font-size", 48, 36);
+		display: block;
+	}
+
+	&__image-body {
+		width: 100%;
+		max-width: toRem(450);
+		margin-top: auto;
+
+		img {
+			display: block;
+			object-fit: cover;
+			width: 100%;
+			height: toRem(420);
+		}
+
+		@media (max-width:$mobile) {
+			display: none;
+		}
+	}
+}
