@@ -1,0 +1,107 @@
+.stay-with {
+	@include adaptiveValue("padding-top", calc($p-big / 2), calc($p-small / 2));
+	@include adaptiveValue("padding-bottom", $p-big , $p-small);
+	position: relative;
+
+	@media (min-width:em(1400)) {
+		&::after {
+			content: '';
+			background-image: url('@img/stay/bg.png');
+			width: toRem(141);
+			height: toRem(190);
+			position: absolute;
+			@include adaptiveValue("right", 200, 0, 1, 1920, 1400);
+			top: 0;
+		}
+	}
+
+	&__container {
+		display: flex;
+		justify-content: space-between;
+		align-items: end;
+		gap: toRem(20);
+	}
+
+	&__image-wrapper {
+		position: relative;
+		max-width: toRem(460);
+		width: 100%;
+
+		@media (max-width:$mobile) {
+			display: none;
+		}
+
+		img {
+			max-width: toRem(245);
+			max-height: toRem(200);
+			position: absolute;
+			top: toRem(-40);
+			left: 51%;
+			transform: translateX(-51%);
+		}
+
+		span {
+			display: flex;
+			align-items: center;
+			flex-direction: column;
+			height: toRem(200);
+			overflow: hidden;
+
+			&::after {
+				content: '';
+				width: toRem(400);
+				min-height: toRem(400);
+				background-color: #43210C;
+				border-radius: 50%;
+			}
+		}
+	}
+
+	&__body {
+		max-width: toRem(488);
+		width: 100%;
+	}
+
+	&__title {
+		font-family: 'Playfair Display';
+		@include adaptiveValue("font-size", 32, 20);
+		line-height: 1.2;
+		@include adaptiveValue("margin-bottom", 20, 10);
+	}
+
+	&__text {
+		font-size: toRem(14);
+		@include adaptiveValue("margin-bottom", 30, 20);
+	}
+
+	&__form {
+		display: flex;
+	}
+
+	&__label {
+		max-width: toRem(305);
+		flex-grow: 1;
+	}
+
+	&__input {
+		border: solid 1px var(--main-color);
+		padding: 15px 20px;
+		width: 100%;
+	}
+
+	&__btn {
+		background-color: var(--yellow-color);
+		width: toRem(82);
+		height: toRem(51);
+		margin-left: toRem(-1);
+		background-image: url('@img/stay/arrow 1.svg');
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: toRem(50) toRem(18);
+		transition: background-color 0.3s;
+
+		&:hover {
+			background-color: #F0AD34;
+		}
+	}
+}

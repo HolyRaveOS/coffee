@@ -8,7 +8,13 @@
 // При необхідності підключаємо додаткові модулі слайдера, вказуючи їх у {} через кому
 // Приклад: { Navigation, Autoplay }
 import Swiper from 'swiper'
-import { Navigation, EffectFade, Autoplay, FreeMode } from 'swiper/modules'
+import {
+  Navigation,
+  EffectFade,
+  Autoplay,
+  FreeMode,
+  Pagination,
+} from 'swiper/modules'
 /*
 Основні модулі слайдера:
 Navigation, Pagination, Autoplay, 
@@ -51,10 +57,10 @@ function initSliders() {
 
       // Ефекти
       effect: 'fade',
-      // autoplay: {
-      //   delay: 3000,
-      //   disableOnInteraction: false,
-      // },
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
 
       // Пагінація
       /*
@@ -110,7 +116,7 @@ function initSliders() {
       // Вказуємо склас потрібного слайдера
       // Підключаємо модулі слайдера
       // для конкретного випадку
-      modules: [Navigation, FreeMode],
+      modules: [FreeMode],
       observer: true,
       observeParents: true,
       slidesPerView: 'auto',
@@ -148,9 +154,82 @@ function initSliders() {
 			*/
 
       // Кнопки "вліво/вправо"
+      // navigation: {
+      //   prevEl: '.hero__button-prev',
+      //   nextEl: '.hero__button-next',
+      // },
+      /*
+			// Брейкпоінти
+			breakpoints: {
+				640: {
+					slidesPerView: 1,
+					spaceBetween: 0,
+					autoHeight: true,
+				},
+				768: {
+					slidesPerView: 2,
+					spaceBetween: 20,
+				},
+				992: {
+					slidesPerView: 3,
+					spaceBetween: 20,
+				},
+				1268: {
+					slidesPerView: 4,
+					spaceBetween: 30,
+				},
+			},
+			*/
+      // Події
+      on: {},
+    })
+  }
+  if (document.querySelector('.reviews__slider')) {
+    // Вказуємо склас потрібного слайдера
+    // Створюємо слайдер
+    new Swiper('.reviews__slider', {
+      // Вказуємо склас потрібного слайдера
+      // Підключаємо модулі слайдера
+      // для конкретного випадку
+      modules: [Navigation, Pagination],
+      observer: true,
+      observeParents: true,
+      slidesPerView: 'auto',
+      spaceBetween: 20,
+      //autoHeight: true,
+      speed: 800,
+      freeMode: true,
+      //touchRatio: 0,
+      //simulateTouch: false,
+      loop: true,
+      //preloadImages: false,
+      //lazy: true,
+
+      // Ефекти
+      // effect: 'fade',
+      // autoplay: {
+      //   delay: 3000,
+      //   disableOnInteraction: false,
+      // },
+
+      // Пагінація
+      pagination: {
+        el: '.reviews__pagination',
+        clickable: true,
+      },
+
+      // Скроллбар
+      /*
+			scrollbar: {
+				el: '.swiper-scrollbar',
+				draggable: true,
+			},
+			*/
+
+      // Кнопки "вліво/вправо"
       navigation: {
-        prevEl: '.hero__button-prev',
-        nextEl: '.hero__button-next',
+        prevEl: '.reviews__button-prev',
+        nextEl: '.reviews__button-next',
       },
       /*
 			// Брейкпоінти

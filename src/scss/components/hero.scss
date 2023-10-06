@@ -61,6 +61,11 @@
 	&__images {
 		img {
 			@include adaptiveValue("width", 183, 120);
+			transition: transform 0.5s;
+
+			&:hover {
+				transform: scale(1.1);
+			}
 		}
 	}
 
@@ -85,7 +90,6 @@
 	}
 
 	&__slide {
-
 		img {
 			object-fit: cover;
 			display: block;
@@ -121,6 +125,12 @@
 			background-repeat: no-repeat;
 			background-size: contain;
 			transform: translate(-50%, -50%);
+		}
+
+		transition: background-color 0.3s;
+
+		&:hover {
+			background-color: #F0AD34;
 		}
 	}
 

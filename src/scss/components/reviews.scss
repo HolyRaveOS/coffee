@@ -1,0 +1,137 @@
+.reviews {
+	@include adaptiveValue("padding-top", calc($p-big / 2), calc($p-small / 2));
+	@include adaptiveValue("padding-bottom", calc($p-big / 2), calc($p-small / 2));
+
+	&__container {
+		position: relative;
+	}
+
+	&__wrapper {
+		@media (min-width:$pc) {
+			padding-top: toRem(30);
+
+			.swiper-slide-next {
+				transform: translateY(toRem(-30));
+			}
+		}
+
+		@media (max-width:$pc) {
+			padding-bottom: toRem(45);
+		}
+	}
+
+	&__slide {
+		max-width: toRem(384);
+		width: 100%;
+		border: 1px solid var(--main-color, #1E1207);
+		transition: transform 0.8s;
+
+		@media (max-width:$mobileSmall) {
+			max-width: toRem(285);
+		}
+	}
+
+	&__comment {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+	}
+
+	&__comment-text {
+		display: flex;
+		align-items: start;
+		flex-direction: column;
+		gap: toRem(10);
+		flex-grow: 1;
+
+		&::before {
+			content: '';
+			background-image: url('@img/reviews/vector.svg');
+			width: toRem(48);
+			height: toRem(36);
+		}
+	}
+
+	&__comment-user,
+	&__comment-text {
+		padding: 10px 20px;
+	}
+
+	&__comment-user {
+		color: var(--white-color);
+		background-color: rgba(67, 33, 12, 0.80);
+		display: flex;
+		align-items: center;
+		gap: toRem(10);
+	}
+
+	&__comment-avatar {
+		border-radius: 50%;
+	}
+
+	&__slider-nav {
+		display: flex;
+		position: absolute;
+		align-items: center;
+		@include adaptiveValue("gap", 30, 8);
+		z-index: 1;
+		bottom: toRem(-15);
+		left: 50%;
+		transform: translateX(-50%);
+
+		@media (max-width:$pc) {
+			bottom: 0;
+		}
+
+		.swiper-pagination-bullets {
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+			gap: toRem(8);
+			max-width: toRem(150);
+		}
+	}
+
+	&__button-prev,
+	&__button-next {
+		min-width: toRem(30);
+		height: toRem(30);
+		background-color: var(--brown-color);
+		border-radius: 50%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		&::before {
+			content: '';
+			width: toRem(8);
+			height: toRem(13);
+		}
+	}
+
+	&__pagination {
+		.swiper-pagination-bullet-active {
+			background-color: var(--brown-color);
+		}
+
+		.swiper-pagination-bullet {
+			position: relative;
+			min-width: toRem(10);
+			height: toRem(10);
+			border-radius: 50%;
+			border: solid 1px var(--main-color);
+		}
+	}
+
+	&__button-prev {
+		&::before {
+			background-image: url('@img/reviews/arrow-left.svg');
+		}
+	}
+
+	&__button-next {
+		&::before {
+			background-image: url('@img/reviews/arrow-right.svg');
+		}
+	}
+}
