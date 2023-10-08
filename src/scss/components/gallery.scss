@@ -25,7 +25,7 @@
 
 	&__list {
 		position: relative;
-		margin-bottom: toRem(40);
+		@include adaptiveValue("margin-bottom", 40, 20);
 		columns: 3;
 		column-gap: toRem(10);
 
