@@ -1,4 +1,5 @@
 //=============================================================
+
 .header {
 	color: var(--white-color);
 	padding: toRem(40) 0;
@@ -6,7 +7,7 @@
 	right: 0;
 	left: 0;
 	z-index: 100;
-	transition: padding 0.3s;
+	transition: padding 0.3s, background-color 0.3s, color 0.3s;
 
 	@media (max-width:$tablet) {
 		padding: toRem(10) 0;
@@ -15,15 +16,88 @@
 	&._header-scroll {
 		padding: toRem(10) 0;
 		background-color: rgb(18, 9, 0, 0.9);
+		color: var(--white-color);
 
 		@media (max-width:$mobileSmall) {
 			padding: toRem(5) 0 toRem(2) 0;
 		}
 	}
 
+	&--white {
+		color: var(--main-color);
+
+		.icon-menu {
+			@media (max-width: $mobile) {
+				.burger-line {
+					background-color: #000;
+
+					&::before,
+					&::after {
+						background-color: #000;
+					}
+				}
+			}
+		}
+
+		.menu__list {
+			@media (max-width:$mobile) {
+				background-color: var(--white-color);
+			}
+		}
+
+		&._header-scroll {
+			svg {
+				path {
+					fill: var(--white-color);
+				}
+			}
+
+			.telegram-svg {
+				path {
+					fill: transparent;
+					stroke: var(--white-color);
+				}
+			}
+
+			.menu__list {
+				@media (max-width:$mobile) {
+					color: var(--main-color);
+				}
+			}
+
+			.icon-menu {
+				@media (max-width: $mobile) {
+					.burger-line {
+						background-color: #fff;
+
+						&::before,
+						&::after {
+							background-color: #fff;
+						}
+					}
+				}
+
+				.menu-open & {
+					background-color: transparent;
+
+					.burger-line {
+
+						&::before,
+						&::after {
+							background-color: #000;
+						}
+					}
+				}
+			}
+		}
+	}
+
+
 	.logo {
 		@media (max-width:$mobile) {
 			flex-grow: 1;
+			position: relative;
+			z-index: 5;
 		}
 
 		img {
@@ -42,6 +116,8 @@
 	&__contacts {
 		display: flex;
 		gap: toRem(40);
+		position: relative;
+		z-index: 5;
 	}
 
 	&__social-links {

@@ -2,25 +2,27 @@
 import { isMobile } from './functions.js'
 // Підключення списку активних модулів
 import { flsModules } from './modules.js'
+if (document.body.classList.contains('script-index')) {
+  function showMoreCustom(showAmount) {
+    const imageItems = document.querySelectorAll('[show-more-item]')
+    const showMoreBtn = document.querySelector('[show-more-btn]')
+    showAmount = 6
 
-function showMoreCustom(showAmount) {
-  const imageItems = document.querySelectorAll('[show-more-item]')
-  const showMoreBtn = document.querySelector('[show-more-btn]')
-  showAmount = 6
-
-  function loop() {
-    for (let i = 0; i < showAmount; i++) {
-      if (showAmount <= imageItems.length) imageItems[i].style.display = 'block'
+    function loop() {
+      for (let i = 0; i < showAmount; i++) {
+        if (showAmount <= imageItems.length)
+          imageItems[i].style.display = 'block'
+      }
     }
-  }
-  loop()
-
-  showMoreBtn.onclick = () => {
-    showAmount += 3
     loop()
-    if (showAmount >= imageItems.length) {
-      showMoreBtn.style.display = 'none'
+
+    showMoreBtn.onclick = () => {
+      showAmount += 3
+      loop()
+      if (showAmount >= imageItems.length) {
+        showMoreBtn.style.display = 'none'
+      }
     }
   }
+  showMoreCustom(6)
 }
-showMoreCustom(6)

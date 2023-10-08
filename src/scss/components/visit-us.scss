@@ -1,0 +1,70 @@
+.visit-us {
+	@include adaptiveValue("padding-top", 170, 90);
+	@include adaptiveValue("padding-bottom", calc($p-big /2), calc($p-small / 2));
+
+	&__container {}
+
+	&__title {}
+
+	&__subtitle {
+		max-width: toRem(500);
+		margin: 0 auto;
+		text-align: center;
+		@include adaptiveValue("margin-bottom", 30, 20);
+	}
+
+	&__body {
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		gap: toRem(40);
+
+		@media (max-width:$mobile) {
+			flex-direction: column;
+			gap: toRem(10);
+		}
+	}
+
+	&__map {
+		@media (max-width:$mobile) {
+			margin: 0 -15px;
+		}
+	}
+
+	&__contacts {
+		display: flex;
+		flex-direction: column;
+		@include adaptiveValue("gap", 40, 10);
+
+		@media (max-width:$mobile) {
+			flex-direction: row;
+			flex-wrap: wrap;
+			max-width: toRem(600);
+			width: 100%;
+			column-gap: toRem(30);
+			row-gap: toRem(10);
+		}
+	}
+
+	&__address {}
+
+	&__label {
+		display: block;
+		font-weight: 600;
+		margin-bottom: toRem(10);
+	}
+
+	&__text {}
+
+	&__hours {}
+
+	&__phone {}
+
+	&__social-links {
+		display: flex;
+		gap: toRem(10);
+		align-items: end;
+	}
+
+	&__social-link {}
+}

@@ -1,6 +1,8 @@
 <header class="header">
   <div class="header__container">
-    <a href="#!" class="logo"><img src="@img/logo.svg" alt="logo" /></a>
+    <a data-goto-header data-goto=".hero" href="#hero" class="logo"
+      ><img src="@img/logo.svg" alt="logo"
+    /></a>
     <div class="header__menu menu">
       <button type="button" class="menu__icon icon-menu">
         <span class="visually-hidden">Бургер кнопка</span>
@@ -9,16 +11,23 @@
       <nav class="menu__body">
         <ul class="menu__list">
           <li class="menu__item">
-            <a href="#!" class="menu__link hover">About us</a>
+            <a href="../about-us.html" class="menu__link hover">About us</a>
           </li>
           <li class="menu__item">
-            <a href="#!" class="menu__link hover">Menu</a>
+            <a
+              data-goto=".favorite-menu"
+              href="#favorite-menu"
+              class="menu__link hover"
+              >Menu</a
+            >
           </li>
           <li class="menu__item">
-            <a href="#!" class="menu__link hover">Gallery</a>
+            <a data-goto=".gallery" href="#gallery" class="menu__link hover"
+              >Gallery</a
+            >
           </li>
           <li class="menu__item">
-            <a href="#!" class="menu__link hover">Contact</a>
+            <a href="../contacts.html" class="menu__link hover">Contact</a>
           </li>
         </ul>
       </nav>

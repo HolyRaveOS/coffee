@@ -33,7 +33,7 @@
 	//=========================================================================
 	--font-family: 'Lato'; // Default font
 	//=========================================================================
-	--main-color: #43210C; // Default font color
+	--main-color: #1E1207; // Default font color
 	--brown-middle: #120900;
 	--brown-color: #43210C;
 	--dark-color: #06100F;
@@ -168,3 +168,9 @@ Snippet (HTML): cnt
 @import 'components/gallery';
 @import 'components/reviews';
 @import 'components/stay-with';
+@import 'components/who-we';
+@import 'components/values';
+@import 'components/baristas';
+@import 'components/baristas-card';
+@import 'components/visit-us';
+@import 'components/grid-gallery';

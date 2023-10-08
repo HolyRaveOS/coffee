@@ -10,6 +10,12 @@
 	}
 }
 
+.page {
+	.stay-with {
+		@include adaptiveValue("padding-top", calc($p-big / 2), calc($p-small / 2));
+	}
+}
+
 .hover {
 	display: flex;
 	justify-content: center;
@@ -63,4 +69,8 @@
 	@include adaptiveValue("font-size", 32, 30);
 	line-height: 1.2;
 	@include adaptiveValue("margin-bottom", 30, 20);
+
+	&--centered {
+		text-align: center;
+	}
 }

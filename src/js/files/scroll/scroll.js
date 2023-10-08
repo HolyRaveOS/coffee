@@ -107,9 +107,9 @@ export function pageNavigation() {
   }
 }
 // Робота з шапкою при скролі
-export function headerScroll() {
+export function headerScroll(className) {
   addWindowScrollEvent = true
-  const header = document.querySelector('header.header')
+  const header = document.querySelector(className)
   const headerShow = header.hasAttribute('data-scroll-show')
   const headerShowTimer = header.dataset.scrollShow
     ? header.dataset.scrollShow

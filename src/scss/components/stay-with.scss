@@ -1,5 +1,6 @@
 .stay-with {
-	@include adaptiveValue("padding-top", calc($p-big / 2), calc($p-small / 2));
+	@include adaptiveValue("padding-top", $p-big , $p-small);
+
 	@include adaptiveValue("padding-bottom", $p-big , $p-small);
 	position: relative;
 

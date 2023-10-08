@@ -1,0 +1,51 @@
+.baristas {
+	@include adaptiveValue("padding-top", calc($p-big /2), calc($p-small / 2));
+	@include adaptiveValue("padding-bottom", $p-big, $p-small);
+
+	&__container {}
+
+	&__title {}
+
+	&__subtitle {
+		max-width: toRem(590);
+		width: 100%;
+		margin: 0 auto;
+		@include adaptiveValue("margin-bottom", 30, 15);
+	}
+
+	&__slider {
+		padding-bottom: toRem(20);
+	}
+
+	&__wrapper {
+		margin-bottom: toRem(20);
+	}
+
+	&__slide {}
+
+	&__swiper-scrollbar {
+		height: toRem(6);
+		max-width: toRem(306);
+		width: 100%;
+		border: solid 1px var(--main-color);
+		border-radius: toRem(10);
+		margin: 0 auto;
+		position: relative;
+
+		.swiper-scrollbar-drag {
+			background-color: var(--main-color);
+			height: toRem(4);
+			border-radius: toRem(10);
+			cursor: pointer;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			&::before {
+				content: '';
+				height: toRem(40);
+				width: 100%;
+			}
+		}
+	}
+}
